@@ -11,7 +11,9 @@ namespace TestUngDung.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var user = new ProductDao();
+            var model = user.ListAll();
+            return PartialView(model);
         }
     }
 }
